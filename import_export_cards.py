@@ -10,6 +10,7 @@ socket.bind("tcp://*:5554")
 while True:
     message = socket.recv().decode()
 
+    print(f"Received: {message}")
     if message == 'Exit':
         break
 
@@ -25,3 +26,4 @@ while True:
         result = "Invalid command."
 
     socket.send_string(result)
+    print(f"Sent: {result}")
